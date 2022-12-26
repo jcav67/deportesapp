@@ -6,14 +6,12 @@ public class Deporte {
     private String nombre;
     private String nivel;
 
-    private static int idActual = 0;
-
     public Deporte(){
 
     }
 
-    public Deporte( String nombre, String nivel) {
-        this.id = ++idActual;
+    public Deporte(int id, String nombre, String nivel) {
+        this.id = id;
         this.nombre = nombre;
         this.nivel = nivel;
     }

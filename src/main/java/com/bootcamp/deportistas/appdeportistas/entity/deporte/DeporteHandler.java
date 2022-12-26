@@ -12,10 +12,10 @@ import java.util.List;
 public class DeporteHandler implements IDeporte<Deporte> {
 
     private final List<Deporte> deportes = new ArrayList<>(
-            List.of(new Deporte("Futbol","profesional")
-                    ,new Deporte("Basketball","Aficionado")
-                    ,new Deporte("Golf","Profesional")
-                    ,new Deporte("Baseball","Aficionado")
+            List.of(new Deporte(1,"Futbol","profesional")
+                    ,new Deporte(2,"Basketball","Aficionado")
+                    ,new Deporte(3,"Golf","Profesional")
+                    ,new Deporte(4,"Baseball","Aficionado")
             )
 
     );
@@ -58,5 +58,15 @@ public class DeporteHandler implements IDeporte<Deporte> {
             return true;
         }
         return false;
+    }
+
+    public Deporte findOneById(int  idABuscar) {
+
+        if(this.deportes.stream().anyMatch(deporte -> deporte.getId() == idABuscar)){
+
+            return this.deportes.stream().filter(deporte -> deporte.getId() == idABuscar).findFirst().get();
+        }
+
+        return null;
     }
 }

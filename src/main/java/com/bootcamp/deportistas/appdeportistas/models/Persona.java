@@ -16,12 +16,13 @@ public class Persona implements Serializable {
 
     }
 
-    public Persona(String nombre, String apellido, String celular, int edad) {
+    public Persona(String nombre, String apellido, String celular, int edad, int deporteId) {
         this.id = ++idActual;
         this.nombre = nombre;
         this.apellido = apellido;
         this.celular = celular;
         this.edad = edad;
+        this.deporteId = deporteId;
     }
 
     public String getNombre() {
